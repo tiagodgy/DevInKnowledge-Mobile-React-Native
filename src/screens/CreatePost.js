@@ -63,7 +63,7 @@ export default function CreatePost({ navigation }) {
         ></TextInput>
         <Picker
           style={styles.select}
-          selectedValue={"FullStack"}
+          selectedValue={selectedCategory}
           onValueChange={(itemValue, itemIndex) =>
             setSelectedCategory(itemValue)
           }

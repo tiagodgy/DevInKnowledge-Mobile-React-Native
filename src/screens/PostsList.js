@@ -41,7 +41,7 @@ export default function PostsList({ navigation }) {
 
   function searchCards() {
     if (search != "") {
-      fetch(API + "/posts?title=" + search)
+      fetch(API + "/posts?title_like=" + search)
         .then(async (response) => {
           const data = await response.json();
           setCards(data);
