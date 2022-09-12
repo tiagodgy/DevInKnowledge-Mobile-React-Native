@@ -6,13 +6,23 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "api": "json-server database.json -w -p 3333",
+    "grok": "npx ngrok http 3333"
   },
   "dependencies": {
+    "@react-native-picker/picker": "^2.4.4",
+    "@react-navigation/stack": "^6.2.3",
     "expo": "~46.0.9",
     "expo-status-bar": "~1.4.0",
+    "json-server": "^0.17.0",
+    "ngrok": "^4.3.3",
     "react": "18.0.0",
-    "react-native": "0.69.5"
+    "react-native": "0.69.5",
+    "react-native-gesture-handler": "~2.5.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-vector-icons": "^9.2.0",
+    "expo-av": "~12.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

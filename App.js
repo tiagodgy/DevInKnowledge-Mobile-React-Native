@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+const Stack = createStackNavigator();
+
+import PostsList from "./src/screens/PostsList";
+import CreatePost from "./src/screens/CreatePost";
+import VideoScreen from "./src/screens/VideoScreen";
+import EditPost from "./src/screens/EditPost";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="PostsList">
+        <Stack.Screen
+          name="PostsList"
+          component={PostsList}
+          options={{ headerShown: false, title: "Lista de cards" }}
+        />
+        <Stack.Screen
+          name="CreatePost"
+          component={CreatePost}
+          options={{ title: "Adicione um card" }}
+        />
+        <Stack.Screen
+          name="VideoScreen"
+          component={VideoScreen}
+          options={{ title: "Video" }}
+        />
+        <Stack.Screen
+          name="EditPost"
+          component={EditPost}
+          options={{ title: "Edite o card" }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
